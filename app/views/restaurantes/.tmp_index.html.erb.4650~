@@ -1,0 +1,29 @@
+<%= render :partial => "titulo" %>
+<fieldset>
+	<legend> <h1> Lista Restaurantes </h1> </legend>	
+<table>
+  <tbody>
+  <tr>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Especialidade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @restaurantes.each do |restaurante| %>
+  <tr>
+    <td><%= restaurante.nome %></td>
+    <td><%= restaurante.endereco %></td>
+    <td><%= restaurante.especialidade %></td>
+    <td><%= link_to 'Mostrar', { :action => 'show', :id => restaurante} %></td>
+    <td><%= link_to 'Editar', { :action => 'edit', :id => restaurante} %></td>
+    <td> <%= link_to 'Deletar', { :action => 'destroy', :id => restaurante } %> </td>
+  </tr>  
+<% end %>
+</tbody>
+</table>
+</fieldset>
+<br />
+<%= link_to 'Novo Restaurante', { :action => 'new' } %>

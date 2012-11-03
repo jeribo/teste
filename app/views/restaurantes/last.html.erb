@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @restaurante.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @restaurante.endereco %>
+</p>
+
+<p>
+  <b>Especialidade:</b>
+  <%= @restaurante.especialidade %>
+</p>
+
+
+<%= link_to 'Editat', { :action => 'edit', :id => @restaurante } %> |
+<%= link_to 'Voltar', { :action => 'index' } %>

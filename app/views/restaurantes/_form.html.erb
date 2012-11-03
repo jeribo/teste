@@ -1,0 +1,32 @@
+<%= form_for(@restaurante, :url => {:action => 'create'}, :html => {:multipart => true}) do |f| %>
+  <% if @restaurante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurante.errors.count, "error") %> prohibited this restaurante from being saved:</h2>
+
+      <ul>
+      <% @restaurante.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :especialidade %><br />
+    <%= f.text_field :especialidade %>
+  </div>
+  <p> Foto </p>
+  <% f.file_field :foto %>  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
